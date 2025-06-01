@@ -68,4 +68,3 @@
 [2025-05-31 15:11:19][ERROR] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
 [2025-05-31 15:28:07][INFO] Fetching all records from ArtistDB
 [2025-05-31 16:07:33][ERROR] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'exondia_com_db_php.users' doesn't exist
-d
