@@ -30,10 +30,20 @@ jobs:
           local-dir: ./
           exclude: |
             .git/
-            .github/
-            tests/
-            node_modules/
+            .git/**
+            **/.git/
+            **/.git/**
+            .git*
             **/.git*
-            **/.github*
-            **/tests/*
-            **/node_modules/*
+            .github/
+            .github/**
+            **/.github/
+            **/.github/**
+            tests/
+            tests/**
+            **/tests/
+            **/tests/**
+            node_modules/
+            node_modules/**
+            **/node_modules/
+            **/node_modules/**
