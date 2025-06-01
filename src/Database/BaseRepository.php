@@ -17,10 +17,11 @@ abstract class BaseRepository extends Database
 				'data' => $statement->fetchAll(PDO::FETCH_CLASS, $this->modelClass)
 			];
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false, 
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
     }
 
@@ -59,10 +60,11 @@ abstract class BaseRepository extends Database
 			}
 			
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false,
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
     }
 
@@ -80,10 +82,11 @@ abstract class BaseRepository extends Database
 				'message' => 'Record created successfully'
 			];
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false, 
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 	}
 
@@ -105,10 +108,11 @@ abstract class BaseRepository extends Database
 				'message' => 'Record updated successfully'
 			];
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false, 
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 	}
 
@@ -130,10 +134,11 @@ abstract class BaseRepository extends Database
 				'message' => 'Record deleted successfully'
 			];
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false, 
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 	}
 }

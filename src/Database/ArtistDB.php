@@ -31,10 +31,11 @@ class ArtistDB extends BaseRepository {
 				'data' => $result
 			];
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false, 
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 	}
 
@@ -83,10 +84,11 @@ class ArtistDB extends BaseRepository {
 				'message' => 'Record deleted successfully'
 			];
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false, 
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 	}
 }

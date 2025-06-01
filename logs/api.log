@@ -1,4 +1,4 @@
-This file is intentionally left blank.[2025-05-17 10:27:22][INFO] Fetching all records from AlbumDB
+[2025-05-17 10:27:22][INFO] Fetching all records from AlbumDB
 [2025-05-17 10:27:34][INFO] Fetching all records from AlbumDB
 [2025-05-17 10:27:47][INFO] Fetching all records from AlbumDB
 [2025-05-17 11:07:13][INFO] Fetching all records from AlbumDB
@@ -65,3 +65,6 @@ This file is intentionally left blank.[2025-05-17 10:27:22][INFO] Fetching all r
 [2025-05-20 10:06:53][INFO] Fetching all records from TrackDB
 [2025-05-20 13:49:54][INFO] Fetching all records from ArtistDB
 [2025-05-20 13:51:11][INFO] Fetching all records from AlbumDB
+[2025-05-31 15:11:19][ERROR] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-05-31 15:28:07][INFO] Fetching all records from ArtistDB
+[2025-05-31 16:07:33][ERROR] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'exondia_com_db_php.users' doesn't exist

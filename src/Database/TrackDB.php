@@ -54,10 +54,11 @@ class TrackDB extends BaseRepository {
 				'data' => $tracks
 			];
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false,
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 	}
 
@@ -104,10 +105,11 @@ class TrackDB extends BaseRepository {
 			];
 			
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false,
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 		
 	}
@@ -131,10 +133,11 @@ class TrackDB extends BaseRepository {
 
 			return parent::delete($id);
 		} catch (PDOException $e) {
-			return [
-				'ok'      => false,
-				'message' => $e->getMessage()
-			];
+			Logger::log($e->getMessage(), 'ERROR');
+            return [
+                'ok'      => false, 
+                'message' => 'Database error'
+            ];
 		}
 	}
 }

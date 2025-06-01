@@ -42,9 +42,10 @@ class AlbumDB extends BaseRepository {
 				'data' => $albums
 			];
 		} catch (PDOException $e) {
+			Logger::log($e->getMessage(), 'ERROR'); // Log the real error
 			return [
 				'ok'      => false,
-				'message' => $e->getMessage()
+				'message' => 'Database error'
 			];
 		}
 	}
@@ -98,9 +99,10 @@ class AlbumDB extends BaseRepository {
 			}
 			
 		} catch (PDOException $e) {
+			Logger::log($e->getMessage(), 'ERROR'); // Log the real error
 			return [
 				'ok'      => false,
-				'message' => $e->getMessage()
+				'message' => 'Database error'
 			];
 		}
 	}
@@ -161,9 +163,10 @@ class AlbumDB extends BaseRepository {
 			];
 			
 		} catch (PDOException $e) {
+			Logger::log($e->getMessage(), 'ERROR'); // Log the real error
 			return [
 				'ok'      => false, 
-				'message' => $e->getMessage()
+				'message' => 'Database error'
 			];
 		}
 	}
@@ -208,9 +211,10 @@ class AlbumDB extends BaseRepository {
 				'message' => 'Record created successfully'
 			];
 		} catch (PDOException $e) {
+			Logger::log($e->getMessage(), 'ERROR'); // Log the real error
 			return [
 				'ok'      => false, 
-				'message' => $e->getMessage()
+				'message' => 'Database error'
 			];
 		}
 	}
@@ -247,9 +251,10 @@ class AlbumDB extends BaseRepository {
 			return parent::delete($id);
 			
 		} catch (PDOException $e) {
+			Logger::log($e->getMessage(), 'ERROR'); // Log the real error
 			return [
 				'ok'      => false, 
-				'message' => $e->getMessage()
+				'message' => 'Database error'
 			];
 		}	
 	}
