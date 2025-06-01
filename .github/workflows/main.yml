@@ -1,0 +1,34 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: |
+          echo "DB_HOST=${{ secrets.ENV_DB_HOST }}" > .env
+          echo "DB_NAME=${{ secrets.ENV_DB_NAME }}" >> .env
+          echo "DB_USER=${{ secrets.ENV_DB_USER }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.ENV_DB_PASSWORD }}" >> .env
+
+      - name: Upload to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /staging/ # Change to your target directory if needed
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.github*
+            **/tests/*
