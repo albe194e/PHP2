@@ -29,6 +29,11 @@ jobs:
           server-dir: /staging/ # Change to your target directory if needed
           local-dir: ./
           exclude: |
+            .git/
+            .github/
+            tests/
+            node_modules/
             **/.git*
             **/.github*
             **/tests/*
+            **/node_modules/*
